@@ -323,8 +323,27 @@
 // let i = 42
 // console.log(i)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // -----------------------------------------------------------//
 // Уникальнсоть всех символов в строке
+// Напишите функцию, которая определяет уникальны ли все символы в строке. 
+// Регистр должен учитываться: ‘a’ и ‘A’ разные символы.
+// Input: String
+// Output: Boolean
+
 // function isUnique(str) {
 //     let arr = []
 //     for(let i = 0; i < str.length; i++) {
@@ -345,6 +364,12 @@
 // -----------------------------------------------------------//
 
 // Плоский массив
+// Напишите функцию, принимающая массив с вложенными массивами и распакуйте в результирующий плоский массов. 
+// В результате должны получить новый одномерный массив.
+// Input: Array
+// Output: Array
+
+
 // function unpackNestedArray(arr) {
 //     return arr.flat(Infinity)
 //   }
@@ -368,6 +393,11 @@
 // -----------------------------------------------------------//
 
 // Удаление всех повторяющихся значений в строке
+// Напишите функцию, которая принимает строку и возвращает новую, в которой все дублирующиеся символы будут удалены.
+// Input: String
+// Output: String
+
+
 // function removeDupes(str) {
 //     const uniq = new Set(str)
 //     let str2 = Array.from(uniq).join('')
@@ -392,26 +422,50 @@
 // -----------------------------------------------------------//
 
 // Какая строка встречается чаще всего
-function highestFrequency(arr) {
-    let maxString = ''
-    let maxCount = 0
-    let count = {}
+// Напишите функцию, которая принимает массив строк и возвращает самую частовстречающуюся строку в этом массиве. 
+// Если таких строк несколько, то нужно вернуть первую, идя слева на право.
 
-    for(let i = 0; i < arr.length; i++) {
-        let nowStr = arr[i] 
-        if(!count[nowStr]) { // мы завели объект, как счетчик и записываем туда кол-во повторов
-            count[nowStr] = 1
-        } else {
-            count[nowStr]++
-        }
+// Input: String[]
+// Output: String
 
-        if(count[nowStr] > maxCount) {
+// function highestFrequency(arr) {
+//     let maxString = '' // текущая строка, которая имеет максимальное кол-во повторений
+//     let maxCount = 0 // текущее максимальное кол-во повторов
+//     let count = {} // мы завели объект, как счетчик и записываем туда кол-во повторов
 
-        }
-    }
-}
+//     for(let i = 0; i < arr.length; i++) {
+//         let nowStr = arr[i] 
+//         if(!count[nowStr]) { 
+//             count[nowStr] = 1
+//         } else {
+//             count[nowStr]++
+//         }
+//         // console.log(count[nowStr])
+//         if(count[nowStr] > maxCount) {
+//             maxCount = count[nowStr]
+//             maxString = nowStr
+//         }
+//     }
+//     return maxString
+// }
 
-console.log(highestFrequency(['a', 'b', 'c', 'c', 'd', 'e'])) // -> c
-console.log(highestFrequency(['abc', 'def', 'abc', 'def', 'abc'])) // -> abc
-console.log(highestFrequency(['abc', 'def'])) // -> abc
-console.log(highestFrequency(['abc', 'abc', 'def', 'def', 'def', 'ghi', 'ghi', 'ghi', 'ghi' ])) // -> ghi
+// console.log(highestFrequency(['a', 'b', 'c', 'c', 'd', 'e'])) // -> c
+// console.log(highestFrequency(['abc', 'def', 'abc', 'def', 'abc'])) // -> abc
+// console.log(highestFrequency(['abc', 'def'])) // -> abc
+// console.log(highestFrequency(['abc', 'abc', 'def', 'def', 'def', 'ghi', 'ghi', 'ghi', 'ghi' ])) // -> ghi
+
+// -----------------------------------------------------------//
+
+// Повернута ли строка?
+// Напишите функцию, которая принимает 2 строки. Верните `true` если строки являются перевернутым вариантом друг друга (см. пример). 
+// Иначе верните `false`.
+// Input: String, String
+// Output: Boolean
+
+function isStringRotated(source, test) {
+    // todo
+  }
+  
+  console.log(isStringRotated('javascript', 'scriptjava')) // -> true
+  console.log(isStringRotated('javascript', 'iptjavascr')) // -> true
+  console.log(isStringRotated('javascript', 'java')) // -> false
