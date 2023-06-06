@@ -462,22 +462,26 @@
 // Input: String, String
 // Output: Boolean
 
-  function isStringRotated(src, test) {
-    if (src.length !== test.length) {
-      return false;
-    }
+  // function isStringRotated(source, test) {
+  //   // if (source.length !== test.length) {
+  //   //   return false
+  //   // }
+  //   //
+  //   // for (let i = 0; i < source.length; i++) {
+  //   //   const rotate = source.slice(i, source.length) + source.slice(0, i)
+  //   //
+  //   //   if (rotate === test) {
+  //   //     return true
+  //   //   }
+  //   // }
+  //   //
+  //   // return false
+  //   return source.length === test.length && (source + source).includes(test)
+  // }
   
-    let joined = src + src;
-    if (joined.indexOf(test) !== -1) {
-      return true;
-    }
-  
-    return false;
-  }
-  
-  console.log(isStringRotated('javascript', 'scriptjava')) // -> true
-  console.log(isStringRotated('javascript', 'iptjavascr')) // -> true
-  console.log(isStringRotated('javascript', 'java')) // -> false
+  // console.log(isStringRotated('javascript', 'scriptjava')) // -> true
+  // console.log(isStringRotated('javascript', 'iptjavascr')) // -> true
+  // console.log(isStringRotated('javascript', 'java')) // -> false
 
 // #5 Является ли массив подмножеством другого массива
 // Напишите функцию, которая проверяет, является ли второй массив подмножеством первого. 
@@ -485,8 +489,19 @@
 // Input: Number[] & String[], Number[] & String[]
 // Output: Boolean
 
-// function arraySubset(source, subset) {
-//   // todo
+// function arraySubset(src, sub) {
+//   let y = sub.flat(Infinity) // лежит массив [1, 2, 3]
+//   let x = src.flat(Infinity) // лежит массив [2, 1, 3]
+
+//   if(x.length > y.length) {
+//     return false
+//   } else {
+//       for(let i = 0; i < x.lenght; i++) {
+//         if(y.every(item) == x[i]) {
+//           return true
+//         }
+//       }
+// }
 // }
 
 // console.log(arraySubset([2, 1, 3], [1, 2, 3])) // -> true
@@ -553,3 +568,93 @@
 // Напишите функцию groupBy.
 // Input: Number[] & String[], Function & String
 // Output: Object
+
+
+// /**
+//  * @param {number[]} arr
+//  * @return {boolean}
+//  */
+//  var canMakeArithmeticProgression = function(arr) {
+//    for(let i = 0; i < arr.length; i++) {
+//      let x = arr[i] - arr[i+1]
+//      let y = arr[i+1] - arr[i+2]
+//      if(x = y) {
+//        return true
+//      }
+//    }
+// };
+
+// console.log(canMakeArithmeticProgression([3,5,1, -5]))
+// console.log(canMakeArithmeticProgression([1,2,4]))
+
+// Виды сортировок
+
+// Пузырьком:
+// function bubleSort(arr) {
+//   const len = arr.length
+
+//   for(let i = 0; i < len - 1; i++) {
+//     for(let j = 0; j < len - 1; j++) {
+//       if(arr[j] > arr[j+1]) {
+//         let saveItem = arr[j]
+//         arr[j] = arr[j+1]
+//         arr[j+1] = saveItem
+//       }
+
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(bubleSort([4, 7, 1, -4, 5, 22, -100]))
+
+// Перемешиванием 
+// function shakerSort(arr) {
+//   let left = 0
+//   let right = arr.length - 1
+
+//   while(left < right) {
+//     for(let i = left; i < right; i++) {
+//       if(arr[i] > arr[i+1]) {
+//         let saveItem = arr[i]
+//         arr[i] = arr[i+1]
+//         arr[i+1] = saveItem
+//       }
+//     }
+//     right--
+//     for(let i = right; i > left; i--) {
+//       if(arr[i-1] > arr[i]) {
+//         let saveItem = arr[i]
+//         arr[i] = arr[i-1]
+//         arr[i-1] = saveItem
+//       }
+//     }
+//     left++
+//   }
+//   return arr
+// }
+
+// console.log(shakerSort([4, 7, 1, -4, 5, 22, -100]))
+
+// Сортировка расческой
+
+function combSort(arr) {
+  const l = arr.length;
+  const factor = 1.247;
+  let gapFactor = l / factor;
+  
+  while (gapFactor > 1) {
+      const gap = Math.round(gapFactor);
+      for (let i = 0; i+1 < l; i++) {
+          if (arr[i] > arr[i+1]) {
+            let saveItem = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = saveItem
+          }
+      }
+      gapFactor = gapFactor / factor;
+  }
+  return arr
+}
+
+console.log(combSort([4, 7, 1, -4, 5, 22, -100]))
