@@ -1,4 +1,4 @@
-// #4 Какая строка встречается чаще всего
+// Какая строка встречается чаще всего
 // Напишите функцию, которая принимает массив строк и возвращает самую частовстречающуюся строку в этом массиве. 
 // Если таких строк несколько, то нужно вернуть первую, идя слева на право.
 
@@ -90,18 +90,41 @@
 
 // Найти самую длинную строку в массиве
 
-function maxStr(arr) {
-    let maxCount = arr[0].length
-    let maxStr = ''
-    for(let i = 1; i < arr.length; i++) {
-        let now = arr[i].length
-        if(now > maxCount) {
-            maxCount = now // получаем размер
-            maxStr = arr[i]
-        }
-    }
-    return maxStr
-}
+// function maxStr(arr) {
+//     let maxCount = arr[0].length
+//     let maxStr = ''
+//     for(let i = 1; i < arr.length; i++) {
+//         let now = arr[i].length
+//         if(now > maxCount) {
+//             maxCount = now // получаем размер
+//             maxStr = arr[i]
+//         }
+//     }
+//     return maxStr
+// }
 
-console.log(maxStr(['aaa', 'bbbb', 'cc', 'c', 'ddddd', 'ee'])) // -> ddddd
-console.log(maxStr(['abcc', 'defef', 'abcabc', 'defeeee', 'abcas'])) // -> defeeee
+// console.log(maxStr(['aaa', 'bbbb', 'cc', 'c', 'ddddd', 'ee'])) // -> ddddd
+// console.log(maxStr(['abcc', 'defef', 'abcabc', 'defeeee', 'abcas'])) // -> defeeee
+
+// -----------------------------------------------------------//
+
+// Найти максимальное число в последовательности и второе по величине число
+
+// function maxPlusNext(arr) {
+//     let maxNum = arr[0] // значение числа
+//     let postMax
+
+//     for(let i = 1; i < arr.length; i++) {
+//         let now = arr[i]
+//         if(now > maxNum) {
+//             postMax = maxNum
+//             maxNum = now
+//         }
+//     }
+//     return [maxNum, postMax].join(' ')
+// }
+
+// console.log(maxPlusNext([1, 6, 5, 3, 7, 4, 9, 0, 5]))
+// console.log(maxPlusNext([1, 6, 3, 7, 4, 5, 9, 0, 13]))
+
+// -----------------------------------------------------------//
