@@ -299,23 +299,52 @@
 
 // Сортировка расческой
 
-function combSort(arr) {
-  const l = arr.length;
-  const factor = 1.247;
-  let gapFactor = l / factor;
+// function combSort(arr) {
+//   const l = arr.length;
+//   const factor = 1.247;
+//   let gapFactor = l / factor;
   
-  while (gapFactor > 1) {
-      const gap = Math.round(gapFactor);
-      for (let i = 0; i+1 < l; i++) {
-          if (arr[i] > arr[i+1]) {
-            let saveItem = arr[i]
-            arr[i] = arr[i+1]
-            arr[i+1] = saveItem
-          }
-      }
-      gapFactor = gapFactor / factor;
-  }
-  return arr
-}
+//   while (gapFactor > 1) {
+//       const gap = Math.round(gapFactor);
+//       for (let i = 0; i+1 < l; i++) {
+//           if (arr[i] > arr[i+1]) {
+//             let saveItem = arr[i]
+//             arr[i] = arr[i+1]
+//             arr[i+1] = saveItem
+//           }
+//       }
+//       gapFactor = gapFactor / factor;
+//   }
+//   return arr
+// }
 
-console.log(combSort([4, 7, 1, -4, 5, 22, -100]))
+// console.log(combSort([4, 7, 1, -4, 5, 22, -100]))
+
+// Массив целых чисел, в котором каждое число встречается 2 раза,
+// и лишь одно число встречается 1 раз
+
+// function findSingleNumber(arr) {
+//   let sortArr = arr.sort((a, b) => a - b) // отсортировали массив
+  
+//   for(let i = 0; i < sortArr.length; i++) {
+//     let pred = sortArr[i-1]
+//     let now = sortArr[i]
+//     let post = sortArr[i+1]
+    
+//     if(pred != now && now != post) {
+//       return now
+//     }
+//   }
+// } // сложность 2N
+
+// // function findSingleNumber(arr) {
+// //   for (let i = 0; i < arr.length; i++) {
+// //     if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+// //       return arr[i];
+// //     }
+// //   }
+// // }
+
+// console.log(findSingleNumber([1, 1, 4, 5, 56, 5, 56]))
+// console.log(findSingleNumber([1, 2, 3, 4, 5, 1, 2, 3, 4]))
+
