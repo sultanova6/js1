@@ -111,20 +111,30 @@
 // Найти максимальное число в последовательности и второе по величине число
 
 // function maxPlusNext(arr) {
-//     let maxNum = arr[0] // значение числа
-//     let postMax
+//     let max1 // самый большой
+//     let max2
 
-//     for(let i = 1; i < arr.length; i++) {
+//     if(arr[0] > arr[1]) {
+//         max1 = arr[0]
+//         max2 = arr[1]
+//     } else { 
+//         max1 = arr[1]
+//         max2 = arr[0] 
+//     }
+
+//     for(let i = 2; i < arr.length; i++) {
 //         let now = arr[i]
-//         if(now > maxNum) {
-//             postMax = maxNum
-//             maxNum = now
+//         if(now > max1) {
+//             max2 = max1
+//             max1 = now
+//         } else if (now > max2 && now < max1) {
+//             max2 = now
 //         }
 //     }
-//     return [maxNum, postMax].join(' ')
+//     return[max1, max2].join(' ')
 // }
 
-// console.log(maxPlusNext([1, 6, 5, 3, 7, 4, 9, 0, 5]))
-// console.log(maxPlusNext([1, 6, 3, 7, 4, 5, 9, 0, 13]))
+// console.log(maxPlusNext([13, 6, 5, 3, 7, 4, 9, 0, 5, 9]))
+// console.log(maxPlusNext([13, 6, 3, 7, 4, 5, 0, 13]))
 
 // -----------------------------------------------------------//
