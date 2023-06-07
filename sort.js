@@ -79,26 +79,52 @@
 // -----------------------------------------------------------//
 
 // Быстрая сортировка:
-function quickSort(arr) { 
+function quickSort(arr) {
     if(arr.length < 2) {
-        return arr;
+        return arr
     }
-    const pivotIndex = Math.floor(Math.random() * arr.length);
-    const pivot = arr[pivotIndex];
-    const left = []
-    const right = []
+
+    let pivotIndex = Math.floor(arr.length / 2)
+    let pivot = arr[pivotIndex]
+    let left = []
+    let right = []
 
     for(let i = 0; i < arr.length; i++) {
-        if(i === pivotIndex) {
-            continue;
+        if(pivot === arr[i]) {
+            continue
         }
-        if(pivot > arr[i]) {
-            left.push(arr[i])
-        } else {
+        if(arr[i] > pivot) {
             right.push(arr[i])
+        } else {
+            left.push(arr[i])
         }
     }
-    return quickSort(left).concat(pivot, quickSort(right))
+    return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
 console.log(quickSort([4, 7, 1, -4, 5, 22, -100]))
+
+// Бинарный поиск
+// function binarySearch(array, item) {
+//     let start = 0
+//     let end = array.length
+//     let middle;
+//     let found = false
+//     let position = -1
+//     while (found === false && start <= end) {
+//         middle = Math.floor((start + end) / 2);
+//         if (array[middle] === item) {
+//             found = true
+//             position = middle
+//             return position;
+//         }
+//         if (item < array[middle]) {
+//             end = middle - 1
+//         } else {
+//             start = middle + 1
+//         }
+//     }
+//     return position;
+// }
+
+// console.log(binarySearch([4, 7, 1, -4, 5, 22, -100], 8))
