@@ -324,7 +324,25 @@
 // и лишь одно число встречается 1 раз
 
 // function findSingleNumber(arr) {
-//   let sortArr = arr.sort((a, b) => a - b) // отсортировали массив
+//   // let sortArr = arr.sort((a, b) => a - b) // отсортировали массив
+
+//   function bubleSort(arr) {
+//     const len = arr.length
+
+//     for(let i = 0; i < len - 1; i++) {
+//       for(let j = 0; j < len - 1; j++) {
+//         if(arr[j] > arr[j+1]) {
+//           let saveItem = arr[j]
+//           arr[j] = arr[j+1]
+//           arr[j+1] = saveItem
+//         }
+
+//       }
+//     }
+//     return arr
+// }
+
+//   let sortArr = bubleSort(arr)
   
 //   for(let i = 0; i < sortArr.length; i++) {
 //     let pred = sortArr[i-1]
@@ -337,13 +355,21 @@
 //   }
 // } // сложность 2N
 
-// // function findSingleNumber(arr) {
-// //   for (let i = 0; i < arr.length; i++) {
-// //     if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
-// //       return arr[i];
-// //     }
-// //   }
-// // }
+//  function findSingleNumber(arr) {
+//    for (let i = 0; i < arr.length; i++) {
+//      if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+//        return arr[i];
+//      }
+//    }
+//  }
+
+//function findSingleNumber(arr) {
+//  let result = 0;
+//  for (let i = 0; i < arr.length; i++) {
+//    result ^= arr[i];
+//  }
+//  return result;
+//}
 
 // console.log(findSingleNumber([1, 1, 4, 5, 56, 5, 56]))
 // console.log(findSingleNumber([1, 2, 3, 4, 5, 1, 2, 3, 4]))
