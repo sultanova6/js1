@@ -6,18 +6,16 @@
 
 // Пузырьком:
 // function bubleSort(arr) {
-//   const len = arr.length
-
-//   for(let i = 0; i < len - 1; i++) {
-//     for(let j = 0; j < len - 1; j++) {
-//       if(arr[j] > arr[j+1]) {
-//         let saveItem = arr[j]
-//         arr[j] = arr[j+1]
-//         arr[j+1] = saveItem
-//       }
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         for(let j = 0; j < arr.length - 1; j++) {
+//             if(arr[j] > arr[j+1]) {
+//                 let tmp = arr[j]
+//                 arr[j] = arr[j+1]
+//                 arr[j+1] = tmp
+//             }
+//         }
 //     }
-//   }
-//   return arr
+//     return arr
 // }
 
 // console.log(bubleSort([4, 7, 1, -4, 5, 22, -100]))
@@ -79,30 +77,30 @@
 // -----------------------------------------------------------//
 
 // Быстрая сортировка:
-function quickSort(arr) {
-    if(arr.length < 2) {
-        return arr
-    }
+// function quickSort(arr) {
+//     if(arr.length < 2) {
+//         return arr
+//     }
 
-    let pivotIndex = Math.floor(arr.length / 2)
-    let pivot = arr[pivotIndex]
-    let left = []
-    let right = []
+//     let pivotIndex = Math.floor(arr.length / 2)
+//     let pivot = arr[pivotIndex]
+//     let left = []
+//     let right = []
 
-    for(let i = 0; i < arr.length; i++) {
-        if(pivot === arr[i]) {
-            continue
-        }
-        if(arr[i] > pivot) {
-            right.push(arr[i])
-        } else {
-            left.push(arr[i])
-        }
-    }
-    return [...quickSort(left), pivot, ...quickSort(right)]
-}
+//     for(let i = 0; i < arr.length; i++) {
+//         if(pivot === arr[i]) {
+//             continue
+//         }
+//         if(arr[i] > pivot) {
+//             right.push(arr[i])
+//         } else {
+//             left.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(left), pivot, ...quickSort(right)]
+// }
 
-console.log(quickSort([4, 7, 1, -4, 5, 22, -100]))
+// console.log(quickSort([4, 7, 1, -4, 5, 22, -100]))
 
 // Бинарный поиск
 // function binarySearch(array, item) {

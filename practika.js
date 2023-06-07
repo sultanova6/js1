@@ -35,19 +35,37 @@
 //     return arr.flat(Infinity)
 //   }
 
-// function unpackNestedArray(nestedArray) {
+// function unpackNestedArray(arr) {
 //     let result = [];
   
-//     for (let i = 0; i < nestedArray.length; i++) {
-//       if (Array.isArray(nestedArray[i])) {
-//         result = result.concat(unpackNestedArray(nestedArray[i]));
+//     for (let i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//         result = result.concat(unpackNestedArray(arr[i]));
 //       } else {
-//         result.push(nestedArray[i]);
+//         result.push(arr[i]);
 //       }
 //     }
   
 //     return result;
 //   }
+
+// function unpackNestedArray(arr) {
+//   let result = [];
+//   let stack = [arr];
+  
+//   while (stack.length > 0) {
+//     let current = stack.pop();
+//     for (let i = 0; i < current.length; i++) {
+//       if (Array.isArray(current[i])) {
+//         stack.push(current[i]);
+//       } else {
+//         result.push(current[i]);
+//       }
+//     }
+//   }
+  
+//   return result;
+// }
   
 //   console.log(unpackNestedArray([[1], [[2, 3]], [[[4]]]])) // -> [1, 2, 3, 4]
 
